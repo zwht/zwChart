@@ -1,0 +1,8 @@
+/node_modules
+/content/data
+/.idea
+/nohup.out
+/build
+/out
+/npm-debug.log
+.DS_Store
