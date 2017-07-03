@@ -1,6 +1,8 @@
 /**
  * Created by zhaowei on 17/5/10.
  */
+window.echarts=require("./../plug/echarts");
+window.IScroll=require("./../plug/iscroll-probe");
 var ChartInit = require("./chartInit"),
     ChartServer = require("./chartServer"),
     ChartType = require("./chartType")

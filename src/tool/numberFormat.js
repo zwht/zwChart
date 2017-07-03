@@ -5,18 +5,19 @@ var numberFormat = {
     //设置y轴数据格式单位
     formatter: function (v) {
         var str = "";
-        if (!(angular.isArray(v))) {
+        if (v.constructor!=Array) {
             v = [v];
             str = "<b style='font-size: 16px; font-weight: bold'>" + v[0].name + '</b><br/>';
         } else {
             str = "<b style='font-size: 16px; font-weight: bold'>" + v[0].name + '</b><br/>';
-            angular.forEach(v, function (item) {
-                if (item.value != null && item.value != undefined) {
+            for(var i=0;i<v.length;i++){
+            		if (v[i].value != null && v[i].value != undefined) {
                     str += "<i style='display: inline-block; margin: 0 4px; height: 10px; width: 10px; border-radius: 5px;" +
-                        " background: " + item.color + "'></i>";
-                    str += item.seriesName + ' : ' + setNumberFormat(item) + '<br/>';
+                        " background: " + v[i].color + "'></i>";
+                    str += v[i].seriesName + ' : ' + setNumberFormat(v[i]) + '<br/>';
                 }
-            });
+            }
+           
         }
 
         return str;

@@ -8,7 +8,7 @@
     background: #f1f1f1; z-index: 10000;  }
 .zwChartTableBox .zwChartTableHead li{ float: left; height: 39px; line-height: 39px; font-weight: bold;
     font-size: 1.1em; padding-left: 20px; }
-.zwChartTableBox .table{ border: none; margin-bottom: 10px; }
+.zwChartTableBox .table{ border: none; margin-bottom: 10px; min-width: 100%;}
 .zwChartTableBox .table td>div{padding: 10px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     max-width: 400px; }
 .zwChartTableBox .table td>div span{ display: inline-block; max-width: 100%}

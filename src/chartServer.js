@@ -20,6 +20,10 @@ function ChartServer(chartData, chartObj, style) {
     this.chartObj = chartObj;
     this.style = style;
     this.chartData = chartData;
+    
+    this.chartObj.series=this.chartData.series;
+    this.chartObj.xAxis=this.chartData.xAxis;
+    this.chartObj.yAxis=this.chartData.yAxis;
 
     this.init(chartData);
 }
