@@ -3,19 +3,18 @@
  */
 var ChartInit = require("./chartInit"),
     ChartServer = require("./chartServer"),
-    ChartType = require("./chartType");
-var zwChart = {
+    ChartType = require("./chartType")
+var zwchart = {
     init: function (dom) {
-        return new ChartInit(dom);
+        return new ChartInit(dom)
     },
     chartServer: function (chartData, chartObj, style) {
-        return (new ChartServer(chartData, chartObj, style)).option;
+        return (new ChartServer(chartData, chartObj, style)).option
     },
-    chartType: ChartType
+    chartType:ChartType
 };
 
-window.zwChart = zwChart;
-module.exports = zwChart;
+module.exports = zwchart;
 
 
 if (!Object.assign) {
@@ -44,18 +43,18 @@ if (!Object.assign) {
 }
 Array.prototype.sum = function () {
     for (var sum = i = 0; i < this.length; i++)sum += parseInt(this[i]);
-    return sum;
+    return sum ;
 };
 Array.prototype.maxima = function () {
     for (var i = 0, maxValue = Number.MIN_VALUE; i < this.length; i++)parseInt(this[i]) > maxValue && (maxValue = this[i]);
     return maxValue;
 };
 
-Array.prototype.unique = function () {
+Array.prototype.unique = function(){
     var res = [];
     var json = {};
-    for (var i = 0; i < this.length; i++) {
-        if (!json[this[i]]) {
+    for(var i = 0; i < this.length; i++){
+        if(!json[this[i]]){
             res.push(this[i]);
             json[this[i]] = 1;
         }

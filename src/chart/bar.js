@@ -17,7 +17,7 @@ module.exports = function (data) {
                 axisLine: {
                     onZero: false,
                     lineStyle: {
-                        color: data.chartObj.rule.theme.color[0]
+                        //color: data.chartObj.rule.theme.color[0]
                     }
                 },
                 axisTick: {
@@ -35,7 +35,7 @@ module.exports = function (data) {
                 axisLine: {
                     onZero: false,
                     lineStyle: {
-                        color: data.chartObj.rule.theme.color[1]
+                        //color: data.chartObj.rule.theme.color[1]
                     }
                 },
                 name:data.chartObj.unit?'(' + data.chartObj.unit + ')':""

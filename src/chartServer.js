@@ -202,7 +202,9 @@ function initData(data, chartObj) {
     });
 
     //设置数据显示格式
-    if (chartObj.rule && chartObj.rule.numberFormat && chartObj.rule.numberFormat.length) numberFormate.numberFormatInitData(chartObj);
+    if (chartObj.rule && chartObj.rule.numberFormat && chartObj.rule.numberFormat.length){
+        numberFormate.numberFormatInitData(chartObj);
+    }
 
     //计算最大最小，列求和
     var nArr = [], xMax = [], dataMax = -10000000000, dataMin = 100000000000000;

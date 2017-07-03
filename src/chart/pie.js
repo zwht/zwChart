@@ -2,29 +2,27 @@
  * Created by zhaowei on 17/5/23.
  */
 module.exports = function (data) {
-
-    if (data.chartObj.yAxis.length > 1&&data.chartObj.xAxis.length > 1) {
-        for (var i = 0; i < data.chartObj.xAxis[0].data.length; i++) {
+    if (data.chartObj.yAxis.length > 1&&data.chartObj.xAxis.length === 1) {
+        for (var i = 0; i < data.chartObj.yAxis.length; i++) {
             var myOption1 = {
+                title: {
+                    text: data.chartObj.yAxis[i].name,
+                    top:10,
+                    left:'center'
+                },
                 tooltip: {
                     trigger: 'item',
+
                     formatter: "{a} <br/>{b} : {c} ({d}%)"
                 },
                 series: []
             };
             var json = {
+
                 type: data.chartObj.chartType.name,
-                name: data.chartObj.xAxis[0].data[i],
-                data: []
+                name: data.chartObj.yAxis[i].name,
+                data: data.chartObj.yAxis[i].data
             };
-            for (var j = 0; j < data.chartObj.yAxis.length; j++) {
-                for (var o = 0; o < data.chartObj.yAxis[j].data.length; o++) {
-                    if (o == i && data.chartObj.yAxis[j].data[o] != null) {
-                        data.chartObj.yAxis[j].data[o].name = data.chartObj.yAxis[j].name;
-                        json.data.push(data.chartObj.yAxis[j].data[o])
-                    }
-                }
-            }
             myOption1.series.push(json);
             var option1 = Object.assign({}, data.chartObj.rule.theme, myOption1);
             data.option.push({

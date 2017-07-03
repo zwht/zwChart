@@ -11,7 +11,7 @@ var numberFormat = {
         } else {
             str = "<b style='font-size: 16px; font-weight: bold'>" + v[0].name + '</b><br/>';
             angular.forEach(v, function (item) {
-                if(item.value!=null&&item.value!=undefined) {
+                if (item.value != null && item.value != undefined) {
                     str += "<i style='display: inline-block; margin: 0 4px; height: 10px; width: 10px; border-radius: 5px;" +
                         " background: " + item.color + "'></i>";
                     str += item.seriesName + ' : ' + setNumberFormat(item) + '<br/>';
@@ -65,11 +65,17 @@ var numberFormat = {
 };
 
 function setNumberFormat(item) {
-    if (!item.option || !item.option.numberFormat) return item.value;
+    if (!item.option || !item.option.numberFormat){
+        return setValueDecimal(parseFloat(item.value), 2);
+    }
     var numberFormat = item.option.numberFormat, value = item.value;
-    if (numberFormat.unit&&!item.option.unit) value = setValueUnite(value, numberFormat.unit);
+    if (numberFormat.unit && !item.option.unit) value = setValueUnite(value, numberFormat.unit);
 
-    if (numberFormat.decimal) value = setValueDecimal(value, numberFormat.decimal);
+    if (numberFormat.decimal) {
+        value = setValueDecimal(value, numberFormat.decimal);
+    } else {
+        value = setValueDecimal(value, 2);
+    }
     if (numberFormat.separator) value = setValueSeparator(value);
     if (numberFormat.prefix && numberFormat.prefix != '无') value = numberFormat.prefix + value;
     if (numberFormat.suffix && numberFormat.suffix != '无') value = value + numberFormat.suffix;

@@ -85,6 +85,7 @@ chartInit.prototype.setOption = function (option) {
         }
     }
 
+    return cObj;
 };
 chartInit.prototype.renderOneChart = function (obj) {
     if (!obj.option.chartType || !obj.option.chartType.name) {
@@ -120,6 +121,8 @@ chartInit.prototype.setTheme = function (theme) {
 };
 
 chartInit.prototype.rendChart = function (obj) {
+    obj.dom.className="chart"+obj.option.chartType.name
+
     switch (obj.option.chartType.name) {
         case 'mapAir': {
             if (!echarts.getMap(obj.option.chartType.mapName)) {
