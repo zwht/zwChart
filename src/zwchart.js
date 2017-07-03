@@ -6,7 +6,7 @@ window.IScroll=require("./../plug/iscroll-probe");
 var ChartInit = require("./chartInit"),
     ChartServer = require("./chartServer"),
     ChartType = require("./chartType")
-var zwchart = {
+var zwchart=window.zwchart = {
     init: function (dom) {
         return new ChartInit(dom)
     },
