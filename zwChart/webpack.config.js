@@ -1,6 +1,7 @@
 /**
  * Created by zhaowei on 2017/6/16.
  */
+ 
 module.exports = {
     entry: {
         zwChart: "./src/zwchart.js"
